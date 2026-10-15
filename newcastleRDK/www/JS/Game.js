@@ -656,7 +656,7 @@ export default class Game {
 					You completed ${data.P1completed} tasks and your partner completed ${data.P2completed} tasks out of 8.
 					</p>
 					<p> 
-					The next 3 trials will be completed the same as the experiment. The trial will last 6 seconds, with a 6 second break inbetween trials. 
+					The next 3 trials will be completed the same as the experiment. The trial will last 6 seconds, with a 6 second break in between trials. 
 					</p>
 					</div>`;
 

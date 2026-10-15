@@ -61,52 +61,66 @@ async function retryMessage(ws, message, maxRetries = 4, retryDelay = 1000) {
 
 const instructionsHTML = `
 <div style="text-align: center;">
-<h1>Instructions</h1>
+	<h1>Instructions</h1>
 </div>
-
-<div class = "instructions" align="center">
-<p> In this experiment, you will be asked to select an image displaying a number of dots moving on the screen. Within this image, some of the dots will be moving in the same direction (either left or right)
- and others will be moving in a random direction. Your task is to identify the direction in which the majority of the dots are moving. This will vary from very easy, where many of the dots are moving
- in the same direction, to very difficult, where only a few dots are moving in the same direction, responding as quickly and accurately as you can.</p>
-<p> There are two blocks consisting of 30 trials 6 seconds in length, 60 trials in total. In one block you will perform this by yourself, and in the other you will be paired with another participant. <br>
-The experiment will take roughly 30 minutes to complete. </p>
-<p> During the experiment you will encounter several instructions pages where you can take your time to read it, requiring your to press enter to continue. <br>
-While we encourage you to take your time to read and understand these instructions, we also encourage you to consider the other person completing the experiment with you <br>
-and respect their time.  </p>
-<p> We appreciate your participation</p>
-<p> Please press enter to view the practice instructions </p>
+<div class="instructions">
+	<p>
+		In this experiment, you will be asked to select an image displaying a number of dots moving on the screen.
+		Within this image, some of the dots will be moving in the same direction (either left or right) and others will be moving in a random direction.
+		Your task is to identify the direction in which the majority of the dots are moving.
+		This will vary from very easy, where many of the dots are moving in the same direction, to very difficult, where only a few dots are moving in the same direction, responding as quickly and accurately as you can.
+	</p>
+	<p>
+		There are two blocks consisting of 30 trials 6 seconds in length, 60 trials in total.
+		In one block you will perform this by yourself, and in the other you will be paired with another participant.<br>
+		The experiment will take roughly 30 minutes to complete.
+	</p>
+	<p>
+		During the experiment you will encounter several instructions pages where you can take your time to read it, requiring you to press enter to continue.<br>
+		While we encourage you to take your time to read and understand these instructions, we also encourage you to consider the other person completing the experiment with you<br>
+		and respect their time.
+	</p>
+	<p>We appreciate your participation</p>
+	<p>Please press enter to view the practice instructions</p>
 </div>
 `;
 const practiceInstructionsHTML = `
 <div style="text-align: center;">
-<h1>Practice Instructions</h1>
+	<h1>Practice Instructions</h1>
 </div>
-<div class = "practiceInstructions" align="center">
-<p> In this block, you will complete 10 trials, 5 by yourself and 5 with your partner. You are free to select the order in which you complete the different dot motion difficulties. <br>
-Initially, the trials will be 12 seconds with a 12 second break. Later it will switch to 6 second trials with a 6 second break, matching the experiment. <br>
-Here, you will use the mouse to select a task by clicking on it, then responding with either "Z" for left or "X" for right when you think you know which direction the dots are moving. <br>
-If you respond incorrectly, there will be a 500ms delay before you can respond again. Tasks you have completed, or that your partner have completed will be greyed out.<br> </p>
-<p>
-Please try and complete each task as quickly and accurately as possible. <br>
-Please press enter to begin the practice block.
-</p>
+<div class="practiceInstructions">
+	<p>
+		In this block, you will complete 10 trials, 5 by yourself and 5 with your partner.
+		You are free to select the order in which you complete the different dot motion difficulties.<br>
+		Initially, the trials will be 12 seconds with a 12 second break.
+		Later it will switch to 6 second trials with a 6 second break, matching the experiment.<br>
+		Here, you will use the mouse to select a task by clicking on it, then responding with either "Z" for left or "X" for right when you think you know which direction the dots are moving.<br>
+		If you respond incorrectly, there will be a 500ms delay before you can respond again.
+		Tasks you have completed, or that your partner has completed will be greyed out.
+	</p>
+	<p>
+		Please try and complete each task as quickly and accurately as possible.<br>
+		Please press enter to begin the practice block.
+	</p>
 </div>
 `;
 
 const sepInstructionsHTML = `
 <div style="text-align: center;">
-<h1>Instructions</h1>
+	<h1>Instructions</h1>
 </div>
-<div class = "sepInstructions align="center">
-<p> 
-In this block, you will complete the 30 trials by yourself. You are free to select the order in which you complete the different dot motion difficulties. 
-Each trial will last 6 seconds, with a 6 second break inbetween trials. <br>
-Remember to select the difficulty by clicking, and responding with "Z" for left and "X" for right. Be careful of the 500ms incorrect penalty!
-</p>
-<p>
-Please try and complete each trial as quickly and accurately as possible. <br>
- Please press enter to begin the block
-</p>
+<div class="sepInstructions">
+	<p>
+		In this block, you will complete the 30 trials by yourself.
+		You are free to select the order in which you complete the different dot motion difficulties.
+		Each trial will last 6 seconds, with a 6 second break in between trials.<br>
+		Remember to select the difficulty by clicking, and responding with "Z" for left and "X" for right.
+		Be careful of the 500ms incorrect penalty!
+	</p>
+	<p>
+		Please try and complete each trial as quickly and accurately as possible.<br>
+		Please press enter to begin the block
+	</p>
 </div>
 `;
 let sepInstructionsHandler = null;
@@ -178,14 +192,19 @@ async function handleSepInstructions(ws) {
 
 const collabInstructionsHTML = `
 <div style="text-align: center;">
-<h1>Instructions</h1>
+	<h1>Instructions</h1>
 </div>
-<div class = "collabInstructions" align="center">
-<p> In this block, you will complete 30 trials paired with another participant. You are free to select the order in which you complete the different dot motion difficulties, although you cannot complete one that your partner is completing, 
-or has already completed. Each trial will last 6 seconds, with a 6 second break inbetween trials. <br> 
-Remember to select the difficulty by clicking, and responding with "Z" for left and "X" for right. Be careful of the 500ms incorrect penalty! </p>
-<p> Please try and complete each trial as quickly and accurately as possible. </p> 
-<p> Please press enter to begin the block </p>
+<div class="collabInstructions">
+	<p>
+		In this block, you will complete 30 trials paired with another participant.
+		You are free to select the order in which you complete the different dot motion difficulties, although you cannot complete one that your partner is completing, or has already completed.
+		Each trial will last 6 seconds, with a 6 second break in between trials.<br>
+		Remember to select the difficulty by clicking, and responding with "Z" for left and "X" for right.
+		Be careful of the 500ms incorrect penalty!
+	</p>
+	<p>Please try and complete each trial as quickly and accurately as possible.</p>
+	<p>Please press enter to begin the block</p>
+</div>
 `;
 let collabInstructionsHandler;
 
@@ -255,20 +274,23 @@ async function handleCollabInstructions(ws) {
 
 const endGameHTML = `
 <div style="text-align: center;">
-<h1>End of Experiment</h1>
+	<h1>End of Experiment</h1>
 </div>
-<div class = "end-of-experiment" align="center">
-<p> Congratulations! You have now completed the experiment, we appreciate your participation. </p>
-<p> Your participation in this experiment is fascilitating an invesitgation into how people make decisions and schedule tasks 
-both by themselves and in a team environment. We aim to investigate how and why people deviate from the "optimal" decision making process. 
-For example, in the task you just completed, the optimal strategy to get the most reward for time invested was to complete each task from easiest to hardest.
-Why do people deviate from this strategy, and how do they progress to this strategy (or something close to it) as the task continues? How is this process
-different for those operating by themselves versus with a partner? These are the questions and processes we wish to investigate. <br>
-If you would like more information or have any questions, please contact Luke Russell at: 
- LRussell1@uon.edu.au </p>
-<p> Thank you for your time and participation. This connection will close in 2 minutes, and you will be redirected. </p>
-<p> Or, press enter to complete the experiment and return to either Prolific or SONA</p>
-</div>`;
+<div class="end-of-experiment">
+	<p>Congratulations! You have now completed the experiment, we appreciate your participation.</p>
+	<p>
+		Your participation in this experiment is facilitating an investigation into how people make decisions and schedule tasks both by themselves and in a team environment.
+		We aim to investigate how and why people deviate from the "optimal" decision making process.
+		For example, in the task you just completed, the optimal strategy to get the most reward for time invested was to complete each task from easiest to hardest.
+		Why do people deviate from this strategy, and how do they progress to this strategy (or something close to it) as the task continues?
+		How is this process different for those operating by themselves versus with a partner?
+		These are the questions and processes we wish to investigate.<br>
+		If you would like more information or have any questions, please contact Luke Russell at: LRussell1@uon.edu.au
+	</p>
+	<p>Thank you for your time and participation. This connection will close in 2 minutes, and you will be redirected.</p>
+	<p>Or, press enter to complete the experiment and return to either Prolific or SONA</p>
+</div>
+`;
 
 let endGameHandler = null;
 function loadEndGame(targetElementId, ws, id, platform) {
