@@ -1,0 +1,64 @@
+import { sendMessage } from "./instructions.js";
+const consentFormHTML = `
+<div class = "consent" style="text-align: center;">
+<div style="text-align: center;">
+    <h2>PROJECT TITLE: <b>Team Scheduling, Decision Making and Behvaiour</b></h2>
+    <p>
+        <b> Luke Russell </b> Email: LRussell1@uon.edu.au <br>
+        <b> Khalid Abdullahi </b> Email: Khalid.Abdullahi@uon.edu.au <br>
+        <b> Prof Ami Eidels </b> Email: ami.eidels@newcastle.edu.au <br>
+    </p>
+    <p>
+        <b> For further information about this project, please direct questions to either Luke Russell or Khalid Abdullahi. <br>
+        This research is permitted by the University of Newcastle under Human Research Ethics Protocol H-2017-0192</b>
+    </p>
+</div>
+<div  align="left">
+<p>
+In this task, you will be asked to complete 60 trials of a computer-based task. This will involve repeated decisions between two options, both by yourself and with a partner. The task will take approximately 30 minutes to complete.
+You are free to stop the study at any time, and your data will not be used if you choose to do so. If you have any concerns that arise from the 
+task, please email the Principal Researcher Luke Russell at: LRussell1@uon.edu.au. <br>
+<b> Please do not refresh or resize the browser during the experiment, doing so will cause a loss of progress, invalidation of data, and may result in a loss of compensation </b> <br>
+Please read the following statements before proceeding.
+</p>
+<p>1. I consent to participate in this project. The purpose of this research is to integrate the findings between response-time based methodologies and experimental measures of decision making.</p>
+<p>2. I understand that this project is for research purposes only and not for treatment.</p>
+<p>3. In this project, I will be required to complete a computer-based task. The details of this have been explained in the Participant Information Statement which I can request to be emailed to by emailing the Principal Researcher.</p>
+<p>4. My participation is voluntary, and I am free to withdraw from the project at any time without explanation. However, I understand I may not recieve compensation in this case. </p>
+<p> 
+
+<input type="checkbox" id="consent_checkbox" />
+    I agree to take part in this study.
+<button type="button" id="start">Start Experiment</button>
+</div>
+    
+</div>
+
+`;
+
+const participantInfoHTML = `
+ <div class = "participantInfo" align = "center"> 
+		<h2>Participant Information</h2>
+        <p> Please provide your age, gender and platform before proceeding. Please consider your response carefully and make sure to select the correct platform (either SONA or Prolific) that you entered the experiment from. </p>
+        <form id="participantForm">
+            <label for="age">Age:</label>    
+            <input type="number" id="age" placeholder="Age" required/> <br>    
+            <label for="gender">Gender:</label>
+            <select name="gender" id="gender">
+			  <option value="" selected disabled hidden>Choose here</option> 
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select> <br>
+			<label for = "platform"> Platform: </label>
+			<select name = "platform" id = "platform">
+				<option value = "" selected disabled hidden> Choose here </option>
+				<option value = "SONA"> SONA </option>
+				<option value = "Prolific"> Prolific </option>
+				</select> <br>
+            </p>
+            <button type="submit" class = "submit">Submit</button>
+        </form>
+    </div>
+	`;
+export { consentFormHTML, participantInfoHTML };
